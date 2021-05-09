@@ -83,6 +83,14 @@ version = "3.1"
 
 [[package]]
 category = "main"
+description = "Lightweight helpers for views returning json data in Django."
+name = "jason"
+optional = false
+python-versions = "*"
+version = "0.1.7"
+
+[[package]]
+category = "main"
 description = "multidict implementation"
 name = "multidict"
 optional = false
@@ -118,7 +126,7 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "f0f63d9972cf7fab65d8f466934fdacd4c92cf035d41a2450bfa3a9a825e67c1"
+content-hash = "d4b94b8b9d3c0226ebecf5637e10be4626759058a1986ddf9e275186473461aa"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -184,6 +192,9 @@ discord = [
 idna = [
     {file = "idna-3.1-py3-none-any.whl", hash = "sha256:5205d03e7bcbb919cc9c19885f9920d622ca52448306f2377daede5cf3faac16"},
     {file = "idna-3.1.tar.gz", hash = "sha256:c5b02147e01ea9920e6b0a3f1f7bb833612d507592c837a6c49552768f4054e1"},
+]
+jason = [
+    {file = "jason-0.1.7.tar.gz", hash = "sha256:ebb3a47bba158161488ee8ca80f927487b0b3261f80a235f4130bcf438eea454"},
 ]
 multidict = [
     {file = "multidict-5.1.0-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:b7993704f1a4b204e71debe6095150d43b2ee6150fa4f44d6d966ec356a8d61f"},
