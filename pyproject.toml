@@ -10,6 +10,7 @@ urbandictionary = "^1.1"
 discord = "^1.0.1"
 jason = "^0.1.7"
 flask = "^1.1.2"
+replit = "^3.0.0"
 
 [tool.poetry.dev-dependencies]
 
