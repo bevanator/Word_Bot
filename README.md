@@ -7,7 +7,7 @@ to test the bot, add it from: https://discord.com/api/oauth2/authorize?client_id
 <h2>User Manual:</h2>
 
 Commands:<br/>
-[.randomword]: fecthes three random words with definiton.<br/>
+[.randomword]: fetches three random words with definiton.<br/>
   example: .randomword<br/>
             >word 1<br/>
             >word 2<br/>
