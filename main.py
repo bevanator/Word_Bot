@@ -2,11 +2,11 @@ import discord
 import os
 import requests
 import json
-import urbandictionary as ud  
+import urbandictionary as ud
                                           # urbandictionary repo link: https://github.com/bocong/urbandictionary-py
 from udpy import UrbanClient
 from discord.ext import commands
-from keep_alive import keep_alive         # importing keep_alive thread
+from keep_alive import keep_alive         # importing keep_alive thread from the script
 
 client = commands.Bot(command_prefix='.') # bot client, all commands start with '.'
 uClient = UrbanClient()                   # UD api wrapper client, https://pypi.org/project/udpy/
