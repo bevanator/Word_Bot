@@ -1,11 +1,13 @@
 import discord
+import os
 import urbandictionary as ud
+
 from udpy import UrbanClient
 from discord.ext import commands
 
 client = commands.Bot(command_prefix='.')
 uClient = UrbanClient()
-
+token = os.environ['TOKEN']
 
 @client.event
 async def on_ready():
@@ -37,4 +39,4 @@ async def define(ctx, word):
         await ctx.send(d.definition)
 
 
-client.run('ODQwNjQ2NjQzMjMzOTgwNDQ4.YJbPMg.Nl-4_F66_BeP03vWml_e6YetVjo')
+client.run(token)
