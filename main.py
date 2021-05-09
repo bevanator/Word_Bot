@@ -28,7 +28,7 @@ async def on_message(message):
 
 
 @client.command()                         # decorator for commands
-async def randomword(random):             # function name will be used as commands along with bot clientprefix
+async def randomword(random):             # function name will be used as commands along with bot prefix
     rand = ud.random()
     for w in rand[:3]:
         await random.send(w.word)
@@ -36,7 +36,7 @@ async def randomword(random):             # function name will be used as comman
         await random.send('\n****************************************\n')
 
 @client.command()
-async def define(ctx, word):
+async def define(ctx, *, word):           # define phrases
     defs = uClient.get_definition(word)
     for d in defs[:2]:
         await ctx.send(d.definition)
