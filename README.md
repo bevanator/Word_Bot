@@ -6,14 +6,14 @@ to test the bot, add it from: https://discord.com/api/oauth2/authorize?client_id
 
 <h2>User Manual:</h2>
 
-Commands:
-[.randomword]: fecthes three random words with definiton.
-  example: .randommword
-            >word 1
-            >word 2
-            >word 3
-    
-[.define {words}]: fetches 2 definitons for the word.
-  example: .define cul de sac
-            >cul de sac defintion 1
-            >cul de sac defintion 2
+Commands:<br/>
+[.randomword]: fecthes three random words with definiton.<br/>
+  example: .randommword<br/>
+            >word 1<br/>
+            >word 2<br/>
+            >word 3<br/>
+    <br/><br/>
+[.define {words}]: fetches 2 definitons for the word.<br/>
+  example: .define cul de sac<br/>
+            >cul de sac defintion 1<br/>
+            >cul de sac defintion 2<br/>
