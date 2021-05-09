@@ -9,6 +9,7 @@ python = "^3.8"
 urbandictionary = "^1.1"
 discord = "^1.0.1"
 jason = "^0.1.7"
+flask = "^1.1.2"
 
 [tool.poetry.dev-dependencies]
 
