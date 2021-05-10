@@ -10,41 +10,44 @@ from udpy import UrbanClient
 from discord.ext import commands
 from keep_alive import keep_alive         # importing keep_alive thread from the script
 
+replit.clear()                            # clear screen
+
+
 client = commands.Bot(command_prefix='.') # bot client, all commands start with '.'
 uClient = UrbanClient()                   # UD api wrapper client, https://pypi.org/project/udpy/
 token = os.environ['TOKEN']               # do not touch, replit env variable access system.
-hourlyBool = 1
-replit.clear()
-delay = 3600
+
+switch = 1                                # global variable to control word of the day
+delay = 5                                 # frequency in seconds at which words are posted
 
 
-'''
-async def send_interval_message():
-    await client.wait_until_ready()
-    interval = delay
-    channel = discord.Object(id=840663367781842965)
-    while not client.is_closed:
-        rand = ud.random()
-        for w in rand[:1]:
-          message = w.definiton
-        await client.send_message(channel, message)
-        print(message)
-        await asyncio.sleep(interval)
-'''
+async def send_interval_message_all():    # sends to all servers' first text channel it's able to
+  while switch == 1:
+      await asyncio.sleep(delay)
+      for guild in client.guilds:
+        for channel in guild.text_channels:
+          try:
+            # print(channel.id)
+            rand = ud.random()
+            for w in rand[:1]:
+              await channel.send(w.word)
+              await channel.send(w.definition)
+          except Exception:
+            continue
+          else:
+            break
 
 
-
-
-async def send_interval_message():
-  while hourlyBool == 1:
-      await asyncio.sleep(3600)
+async def send_interval_message_specific():# sends to a specific channel
+  while switch == 1:
+      await asyncio.sleep(delay)
       rand = ud.random()
       for w in rand[:1]:
         channel = client.get_channel(id = 840663367781842965)
         await channel.send(w.word)
         await channel.send(w.definition)
-        #print(w.word)
-        
+
+
       
 
 
@@ -53,15 +56,11 @@ async def send_interval_message():
 @client.event                             # decorator for events
 async def on_ready():                     # refer to discord api. on_ready used for confirmation of bot coming online
     print('logged in as {0.user}'.format(client))
-    client.loop.create_task(send_interval_message())
+    client.loop.create_task(send_interval_message_specific())
+                                          # choose method of sending random words
+                                          # _specific for a specific channel with given id
+                                          # _all for all available servers' first text channel it's able to
 
-                                          # print on console
-    text_channel_list = []
-    for guild in client.guilds:
-        for channel in guild.text_channels:
-            text_channel_list.append(channel)
-
-    #print(client.guilds)
 
 '''
 @client.event
