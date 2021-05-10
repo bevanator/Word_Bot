@@ -18,10 +18,25 @@ uClient = UrbanClient()                   # UD api wrapper client, https://pypi.
 token = os.environ['TOKEN']               # do not touch, replit env variable access system.
 
 switch = 1                                # global variable to control word of the day
-delay = 5                                 # frequency in seconds at which words are posted
+delay = 7200                              # frequency in seconds at which words are posted.
 
 
-async def send_interval_message_all():    # sends to all servers' first text channel it's able to
+@client.command()
+async def setWoD(ctx, num=1):
+  global switch
+  switch = num
+
+
+@client.command()
+async def setDelay(ctx, num=3600):
+  global delay
+  delay = num
+
+
+
+
+
+async def send_interval_message_all():                      # sends to all servers' first text channel it's able to
   while switch == 1:
       await asyncio.sleep(delay)
       for guild in client.guilds:
@@ -38,7 +53,7 @@ async def send_interval_message_all():    # sends to all servers' first text cha
             break
 
 
-async def send_interval_message_specific():# sends to a specific channel
+async def send_interval_message_specific():                 # sends to a specific channel
   while switch == 1:
       await asyncio.sleep(delay)
       rand = ud.random()
@@ -62,6 +77,9 @@ async def on_ready():                     # refer to discord api. on_ready used 
                                           # _all for all available servers' first text channel it's able to
 
 
+
+
+
 '''
 @client.event
 async def on_message(message):
@@ -83,7 +101,8 @@ async def hourly(guild):
 
 @client.command()
 async def info(ctx):
-    await ctx.send("ID: {}".format(ctx.guild.id))
+    await ctx.send("Server ID: {}".format(ctx.guild.id))
+
     
 
 @client.command()                         # decorator for commands
