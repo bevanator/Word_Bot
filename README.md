@@ -7,7 +7,7 @@ to test the bot, add it from: https://discord.com/api/oauth2/authorize?client_id
 <h2>User Manual:</h2>
 
 
-The bot is currently set to post a random word every 2 hours on the first text channel it can find.
+The bot is currently set to post a random word every 2 hours on the first text channel it can find. It's up and running 24/7.
 Other commands are as follows.
 
 Commands:<br/>
